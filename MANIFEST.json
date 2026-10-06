@@ -1,0 +1,837 @@
+{
+  "source": "Claude Science 0.1.56",
+  "skills": {
+    "alphafold2": {
+      "name": "alphafold2",
+      "display_name": "AlphaFold2",
+      "description": "Predict protein structure for monomers and multimers with AlphaFold2 via the ColabFold runner (Mirdita et al. 2022, github.com/sokrypton/ColabFold; AlphaFold2 Jumper et al. 2021). Reach for this skill to fold a sequence or complex with the AF2/AF2-Multimer evoformer, to validate designed sequences by self-consistency pLDDT, ipTM, and RMSD, or to run a quick MSA-backed prediction using the public MMseqs2 server.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "AlphaFold2",
+          "license": "CC-BY-4.0"
+        },
+        {
+          "kind": "service",
+          "name": "ColabFold MSA server (api.colabfold.com)",
+          "license": null
+        }
+      ],
+      "file_count": 1,
+      "bytes": 4965,
+      "files": {
+        "alphafold2/SKILL.md": {
+          "sha256": "562520a36043c09f6e740b28a097e1e11a68b73bcc3c4c7cb0e269a644b4427a",
+          "bytes": 4965
+        }
+      }
+    },
+    "boltz": {
+      "name": "boltz",
+      "display_name": "boltz",
+      "description": "Structure prediction for protein, nucleic-acid, and small-molecule complexes with Boltz-2 (Passaro & Wohlwend et al. 2025, github.com/jwohlwend/boltz). Reach for this skill to validate designed binders against a target, to co-fold a protein with a SMILES or CCD ligand, or to get an open-source AlphaFold3 alternative with optional binding-affinity prediction.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "Boltz-2",
+          "license": "MIT"
+        },
+        {
+          "kind": "service",
+          "name": "ColabFold MSA server (api.colabfold.com)",
+          "license": null
+        }
+      ],
+      "file_count": 1,
+      "bytes": 5305,
+      "files": {
+        "boltz/SKILL.md": {
+          "sha256": "4205a08363955f762f45a2065263de0dabedd898eba13460830b70b621b26700",
+          "bytes": 5305
+        }
+      }
+    },
+    "borzoi": {
+      "name": "borzoi",
+      "display_name": "borzoi",
+      "description": "Predict genome-wide functional tracks (RNA-seq, CAGE, DNase, ChIP) from DNA sequence with Borzoi. Use this skill when: (1) Scoring the regulatory effect of a variant on expression/accessibility, (2) Generating predicted coverage tracks for a locus, (3) Prioritizing non-coding variants by predicted track delta.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "Borzoi (PyTorch port)",
+          "license": "CC-BY-4.0"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 3910,
+      "files": {
+        "borzoi/SKILL.md": {
+          "sha256": "a6b87d906c21eb51c141f7510b2e77ef8eab7127abb17a66467043408d92d702",
+          "bytes": 3910
+        }
+      }
+    },
+    "chai1": {
+      "name": "chai1",
+      "display_name": "Chai-1",
+      "description": "Structure prediction for protein, nucleic-acid, and small-molecule complexes with the Chai-1 foundation model (Chai Discovery 2024, github.com/chaidiscovery/chai-lab). Reach for this skill to predict an antibody-antigen or protein-ligand complex from a single FASTA, to re-fold designed binders as an AlphaFold-multimer alternative, or to drive co-folding from Python for batched campaigns on a GPU.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "Chai-1",
+          "license": "Apache-2.0"
+        },
+        {
+          "kind": "service",
+          "name": "ColabFold MSA server (api.colabfold.com)",
+          "license": null
+        }
+      ],
+      "file_count": 1,
+      "bytes": 4615,
+      "files": {
+        "chai1/SKILL.md": {
+          "sha256": "14c7b111475cfb2df0c1ba4de8427b09099439417101bc443fe52e8c80eff539",
+          "bytes": 4615
+        }
+      }
+    },
+    "compute-env-setup": {
+      "name": "compute-env-setup",
+      "display_name": "compute-env-setup",
+      "description": "Set up a compute environment on a remote provider so Claude Science jobs can run there. Covers direct SSH/conda hosts, Slurm clusters, container-via-bridge runners, and managed-API providers (Modal, GCP, RunPod). Use when standing up a new provider, porting an env to a different backend, adding a tool that needs its own software stack, or wiring weight caches. Triggers on \"new compute provider\", \"set up env on\", \"port env to\", \"build GPU image\", \"weight cache\", \"compute_details\", \"conda env on the box\", \"apptainer on slurm\".",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 36130,
+      "files": {
+        "compute-env-setup/SKILL.md": {
+          "sha256": "951fa2b991fdefebc1459994a4c6f204319e94bb3086993d27cfc70cca4bbfba",
+          "bytes": 17881
+        },
+        "compute-env-setup/references/envs_reference.md": {
+          "sha256": "c53c6d4a4ecb630ea54579389fd8aefaac8c31d806b311eddb70df88277759f9",
+          "bytes": 18249
+        }
+      }
+    },
+    "customize": {
+      "name": "customize",
+      "display_name": "customize",
+      "description": "Create, configure, and maintain custom agent profiles and author new skills via the `repl` tool. Use when the user wants to create an agent profile, build a custom agent, modify agent capabilities, attach or detach skills/connectors on a profile, author a skill, or inspect which connectors and tools are available. Also use whenever you need the `host.agents.*` or `host.skills.*` Python SDK.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 1,
+      "bytes": 25061,
+      "files": {
+        "customize/SKILL.md": {
+          "sha256": "a58b519f55c3fe3eb7615cc4347b109735e6e9bca4bbd1fa00a17a5c2017771c",
+          "bytes": 25061
+        }
+      }
+    },
+    "diffdock": {
+      "name": "diffdock",
+      "display_name": "DiffDock",
+      "description": "Predict small-molecule binding poses with DiffDock-L (Corso et al. 2023/2024, github.com/gcorso/DiffDock) — blind diffusion docking that places a ligand into a protein pocket without a predefined search box and ranks the samples with a learned confidence model. Reach for this skill to dock a SMILES or SDF against a PDB, to generate ranked 3D poses for a small fragment library, or to get a starting pose for downstream rescoring. DiffDock predicts geometry, not affinity.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "DiffDock-L",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 2,
+      "bytes": 6460,
+      "files": {
+        "diffdock/SKILL.md": {
+          "sha256": "6c3acc1710209b8daf2322e6103043c3487412153e2455deab6abd851ad8efb6",
+          "bytes": 4476
+        },
+        "diffdock/references/workflows.md": {
+          "sha256": "4f4d780abb02650e475c6e2392db44dc615ecc9c0676a6442847118481c980f9",
+          "bytes": 1984
+        }
+      }
+    },
+    "esmfold2": {
+      "name": "esmfold2",
+      "display_name": "ESMFold2",
+      "description": "Biohub ESMFold2 / ESMFold2-Fast all-atom co-folding (Candido et al. 2026, github.com/Biohub/esm). Single-sequence and MSA modes; protein, DNA, RNA, ligand (CCD/SMILES), modified residues. FoldBench Ab-Ag 50-55%, PPI 70-77% DockQ-pass. Also covers the ESMC-{300M,600M,6B} protein language models from the same release: masked-LM logits, hidden states, mutation scoring, contact prediction, and the SAE interpretability head. MIT-licensed weights on HuggingFace org `biohub`. Use this skill when: (1) Predicting complex structures with single-sequence input, (2) Validating designed binders with ESMFold2-Fast, (3) Running ESMFold2 with MSA input, (4) Getting ESMC embeddings or per-residue mutation scores, (5) Choosing kernel backend and sampling-step settings for paper-faithful throughput.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "ESMFold2 / ESMC",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 3,
+      "bytes": 14712,
+      "files": {
+        "esmfold2/SKILL.md": {
+          "sha256": "28e625bab51a5d33e278b5ee6f304d76afa35c424fd919e1914d649df7600175",
+          "bytes": 10208
+        },
+        "esmfold2/references/design-hook.md": {
+          "sha256": "f100def8706fcadd5ffba599137b910ed7b2896b23e46473f81c414f5335f75a",
+          "bytes": 1452
+        },
+        "esmfold2/references/esmc.md": {
+          "sha256": "62ce8706e7493a537af64e1550c6203d36e2c29a36a46fc2d3afc1b87681abce",
+          "bytes": 3052
+        }
+      }
+    },
+    "evo2": {
+      "name": "evo2",
+      "display_name": "Evo 2",
+      "description": "Score, embed, and generate DNA sequences with Evo 2, a long-context genomic foundation model. Use this skill when: (1) Computing per-nucleotide or per-sequence likelihoods for variant effect\n    scoring,\n(2) Embedding genomic windows for downstream classification, (3) Generating DNA conditioned on a prefix, (4) Scoring regulatory or coding regions across species.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "Evo 2",
+          "license": "Apache-2.0"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 5506,
+      "files": {
+        "evo2/SKILL.md": {
+          "sha256": "60144f18b7b6d5ebe903dea982ddd30f0bb19f6c8a8aec62f1539c2b972768b3",
+          "bytes": 5506
+        }
+      }
+    },
+    "fair-esm2": {
+      "name": "fair-esm2",
+      "display_name": "ESM-2",
+      "description": "Embed proteins with Meta AI's ESM-2 (`fair-esm` package). Use this skill when: (1) Extracting per-residue or per-sequence embeddings for downstream ML, (2) Masked-LM likelihood / mutation effect scoring, (3) Contact prediction from a sequence.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "ESM-2",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 4961,
+      "files": {
+        "fair-esm2/SKILL.md": {
+          "sha256": "da5729e9014848de10296149541ccac30696144ba14c28f003de4cfdd9771480",
+          "bytes": 4961
+        }
+      }
+    },
+    "figure-composer": {
+      "name": "figure-composer",
+      "display_name": "figure-composer",
+      "description": "Compose one publication-grade multi-panel figure. Entry from a one-line claim + data refs, OR from an existing figure via `derive_outline(png)`. Runs a per-figure loop: outline (12-col grid, per-panel ask + label_budget) → fan-out one sub-agent per panel (each loads `figure-style`) → tile + stamp letters → adversarial composite review with two-tier feedback (Tier-1 outline_revisions / Tier-2 per-panel violations) → regen affected panels, ≤3 rounds. Loads panel_task / compose_figure / compose_crops / composite_review_task / derive_outline into the kernel. For one standalone plot use `figure-style`; for whole-paper figure ordering use `paper-narrative`.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 20546,
+      "files": {
+        "figure-composer/kernel.py": {
+          "sha256": "2625345ed20a54c19bcba91490e8b7d9d59f608d81196ca77a95eac148136534",
+          "bytes": 13773
+        },
+        "figure-composer/SKILL.md": {
+          "sha256": "37f4dc3fb964a527e51d305e2d545a63d43e84009011780b9a411f8696fdebd1",
+          "bytes": 6773
+        }
+      }
+    },
+    "figure-style": {
+      "name": "figure-style",
+      "display_name": "figure-style",
+      "description": "Publication-grade figure correctness and legibility rules for final-deliverable figures — not every plot. Quick look or iterating on the analysis (EDA scatters, sanity-check histograms)? Plot plainly without this skill. Producing a figure that ships — report, paper, export, or kept artifact — load this skill first and call `apply_figure_style()` — sets a role-mapped font-size ladder, outward ticks, frameless legends, and 300-dpi output. The skill is a checklist, not a house look: data fidelity (claim-titles tested against every row, excluded data never enters summaries), label economy (floor and ceiling), color threading, chart-choice-by-data-shape, layout, and a render-then-verify QA loop (bbox collision + per-panel perceptual check). Ships helpers: focal_palette, bar_with_points, strip_with_median, end_of_line_labels, panel_letter, set_frame, panel_crops. For multi-panel figures load `figure-composer`; for whole-paper figure arc load `paper-narrative`.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 29690,
+      "files": {
+        "figure-style/kernel.py": {
+          "sha256": "8d16286025719a395e744c5bedcefd1592b1b8e3450263dd1ea7807ffec70122",
+          "bytes": 12457
+        },
+        "figure-style/SKILL.md": {
+          "sha256": "cdf7f4e13bb69044a256a77379a9e0465ba2901b50a9359196efa8e5243ebc04",
+          "bytes": 17233
+        }
+      }
+    },
+    "indication-dossier": {
+      "name": "indication-dossier",
+      "display_name": "indication-dossier",
+      "description": "Generate a therapeutic indication dossier. Covers the patient population, epidemiology, disease biology, standard of care, regulatory precedent, and landmark clinical trials.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 9,
+      "bytes": 28323,
+      "files": {
+        "indication-dossier/SKILL.md": {
+          "sha256": "dfad982f985e7db5a406420b108713c0b8ce39903e304a3f968d11271c9e64ec",
+          "bytes": 5875
+        },
+        "indication-dossier/references/00-research-standards.md": {
+          "sha256": "f4fad6faa98f43c20f80517be606bd03b4020f2bf4d03d5d717885b2341d685b",
+          "bytes": 3101
+        },
+        "indication-dossier/references/01-meta-initialization.md": {
+          "sha256": "c09d1266e85c5aedc04d24d0c36b19c3e46444c6398c2be64896d58d9c6dba2c",
+          "bytes": 1724
+        },
+        "indication-dossier/references/02-epidemiology-research.md": {
+          "sha256": "1f21827754dd56076cb9edb16aee8dc3f75b16681fa5ee7255f1b7ee2f4e0a06",
+          "bytes": 2109
+        },
+        "indication-dossier/references/03-biology-soc-research.md": {
+          "sha256": "722ed3409705ed2822c16d6e9d6f0e0a3026cef3670b0547299669b1f7ce6d58",
+          "bytes": 2368
+        },
+        "indication-dossier/references/04-regulatory-trials-research.md": {
+          "sha256": "322c2c6129fcfb5b1f3d03e2c2c69557872567cf26899a8538483c4c3e385eae",
+          "bytes": 3154
+        },
+        "indication-dossier/references/05-synthesis.md": {
+          "sha256": "4964f5549ae408969257c79b9edeb5359a1ee78e3d5e3ddc527071046f43ff81",
+          "bytes": 5323
+        },
+        "indication-dossier/references/06-writing-style.md": {
+          "sha256": "c4282e80b9c418a67019061c01e4a50c5496a06e8d2c70e62a80ca2d43970617",
+          "bytes": 1746
+        },
+        "indication-dossier/references/waypoint-schemas.md": {
+          "sha256": "4af35fff41a58b20fdb1d80e433ca2d27a8d02d83130175d8abf3c39957cd4e7",
+          "bytes": 2923
+        }
+      }
+    },
+    "ligandmpnn": {
+      "name": "ligandmpnn",
+      "display_name": "LigandMPNN",
+      "description": "Inverse-fold a backbone with ligand, nucleic-acid, and metal context using LigandMPNN (Dauparas et al. 2023, github.com/dauparas/LigandMPNN). Reach for this skill to redesign the residues lining a binding pocket around a bound small molecule or cofactor, to design metal-coordinating sites where the geometry must be respected, or to get threaded designed-sequence PDBs out of any MPNN run.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": null,
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "LigandMPNN",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 6632,
+      "files": {
+        "ligandmpnn/SKILL.md": {
+          "sha256": "406c8497ebccc95a50839037a359a6b96a24fe9120126e4efc83bff741610c49",
+          "bytes": 6632
+        }
+      }
+    },
+    "literature-review": {
+      "name": "literature-review",
+      "display_name": "literature-review",
+      "description": "Find, verify, and synthesize scientific literature — from \"what's the seminal paper for X\" through full multi-source reviews. Covers grounding claims in real retrieved sources, avoiding fabricated citations, handling retractions, and calibrating confidence to evidence strength.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [
+        {
+          "kind": "service",
+          "name": "Crossref",
+          "license": null
+        },
+        {
+          "kind": "service",
+          "name": "OpenAlex",
+          "license": null
+        }
+      ],
+      "file_count": 2,
+      "bytes": 31695,
+      "files": {
+        "literature-review/kernel.py": {
+          "sha256": "fc77a6eebe156a42ca54d564ecf4550a606cb2022b3cc7c512b9426b3297c58a",
+          "bytes": 20361
+        },
+        "literature-review/SKILL.md": {
+          "sha256": "88d86b884e1aba99aaf69d3f5c636e78935d91a1b0d690d5e3ed483d4c8d42f6",
+          "bytes": 11334
+        }
+      }
+    },
+    "managed-model-endpoints": {
+      "name": "managed-model-endpoints",
+      "display_name": "managed-model-endpoints",
+      "description": "Register a model service in the managed family — a local model server container the daemon starts/stops on demand, or a remote upstream model API (https). Read the runbook, allocate a port (local only), compose idempotent start/stop scripts (local only), register once. Load when the user wants a model service available for inference, or when list_compute shows managed endpoints.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 1,
+      "bytes": 10718,
+      "files": {
+        "managed-model-endpoints/SKILL.md": {
+          "sha256": "48cb2bf810b3c54d43ab8384effe019c725e1faf14161464eb8fabf7e8d8d47a",
+          "bytes": 10718
+        }
+      }
+    },
+    "openfold3": {
+      "name": "openfold3",
+      "display_name": "OpenFold3",
+      "description": "Structure prediction using OpenFold3, an open-weights PyTorch reproduction of AlphaFold3 from the AlQuraishi Lab. Use this skill when predicting protein/nucleic-acid/ligand complex structures with an Apache-2.0-licensed AF3 reimplementation.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "OpenFold3",
+          "license": "Apache-2.0"
+        },
+        {
+          "kind": "service",
+          "name": "ColabFold MSA server (api.colabfold.com)",
+          "license": null
+        }
+      ],
+      "file_count": 1,
+      "bytes": 7378,
+      "files": {
+        "openfold3/SKILL.md": {
+          "sha256": "eef2b03a2c7e1c4b94cd29bb27f3e02499a77be5c414a494f3d78e9c7cc443de",
+          "bytes": 7378
+        }
+      }
+    },
+    "paper-narrative": {
+      "name": "paper-narrative",
+      "display_name": "paper-narrative",
+      "description": "Judge and reshape the STORY a paper's figures tell. Input is the work itself — manuscript (or abstract) + figure deck — no hand-written brief. `derive_paper_brief(abstract, captions)` extracts pitch/vision/per-figure-claims; a handling-editor reviewer on the full deck returns hook_verdict (would Fig 1 make me send this for review?), arc (hook→mechanism→evidence→application), figure_moves (panels in the wrong figure), missing_panels (concrete analyses to RUN), kill_list, and boldest_defensible_fig1. Hands per-figure claims to `figure-composer`. Load when writing or revising a paper.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 7728,
+      "files": {
+        "paper-narrative/kernel.py": {
+          "sha256": "ceb1e0df448f2acfb677b68048b03833f4f4bb47fdcd6e0a36874d0100aaf090",
+          "bytes": 5022
+        },
+        "paper-narrative/SKILL.md": {
+          "sha256": "40e090750f98b3ebe8e435e4430f3fbbe11c03f12c7f44594a21f193831f8f87",
+          "bytes": 2706
+        }
+      }
+    },
+    "pdf-explore": {
+      "name": "pdf-explore",
+      "display_name": "pdf-explore",
+      "description": "Use this skill when the user has attached a PDF, paper, report, or other document and the answer needs content from more than one place in it: summarize the methods or any other section, compare sections, find where a topic is discussed, read a value or label off a figure or chart, or find/list/extract every instance of something across the whole document (datasets, benchmarks, citations, figures, table rows, accession numbers — including appendices). Skip it only for a single lookup of 1–4 pages quoted in your very next response — `read_file(pages=[...])` attaches pages as images that are dropped from context after one turn, so multi-section answers end up re-reading the same ranges repeatedly. Parses the PDF once in the Python kernel: `pdf_pages` (pages as persistent text), `pdf_outline` (TOC), `pdf_scan` (rank pages by relevance), `pdf_map`/`pdf_extract` (per-page summary / structured fields via parallel haiku calls). For PDF creation/manipulation, use reportlab/pypdf directly.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 57758,
+      "files": {
+        "pdf-explore/kernel.py": {
+          "sha256": "7b0ffd988d17a8dcc89669c48ad0429ba21727365b149922fe3b5cb82b0880d6",
+          "bytes": 43294
+        },
+        "pdf-explore/SKILL.md": {
+          "sha256": "8abf723178c104dcb65613a899e1e55883a4d3995759994de0110529aabd9442",
+          "bytes": 14464
+        }
+      }
+    },
+    "product-self-knowledge": {
+      "name": "product-self-knowledge",
+      "display_name": "product-self-knowledge",
+      "description": "Stop and consult this skill whenever your response would include specific facts about Anthropic's products. Covers: Claude Code (how to install, Node.js requirements, platform/OS support, MCP server integration, configuration), Claude API (function calling/tool use, batch processing, SDK usage, rate limits, pricing, models, streaming), and Claude.ai (Pro vs Team vs Enterprise plans, feature limits). Trigger this even for coding tasks that use the Anthropic SDK, content creation mentioning Claude capabilities or pricing, or LLM provider comparisons. Any time you would otherwise rely on memory for Anthropic product details, verify here instead — your training data may be outdated or wrong.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 1,
+      "bytes": 2537,
+      "files": {
+        "product-self-knowledge/SKILL.md": {
+          "sha256": "314b9a060c3e12210ca7d95bb54c8db4fe899eec992513f085acd9099e179691",
+          "bytes": 2537
+        }
+      }
+    },
+    "proteinmpnn": {
+      "name": "proteinmpnn",
+      "display_name": "ProteinMPNN",
+      "description": "Inverse-fold a protein backbone (PDB structure) into amino-acid sequence with ProteinMPNN (Dauparas et al. 2022, github.com/dauparas/ProteinMPNN). Reach for this skill to run sequence design on RFdiffusion backbones, to redesign one chain of a PDB while holding interface residues fixed, or to generate a temperature-swept set of sequences for downstream folding.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": null,
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "ProteinMPNN",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 4909,
+      "files": {
+        "proteinmpnn/SKILL.md": {
+          "sha256": "42b01be755d4feb92820b95712016534d944c168a689c495fc6ab044c16cb7da",
+          "bytes": 4909
+        }
+      }
+    },
+    "remote-compute-modal": {
+      "name": "remote-compute-modal",
+      "display_name": "remote-compute-modal",
+      "description": "Run GPU jobs on the user's own Modal account via host.compute.create('modal', provider_params={...}) — the create→submit→wait_for_notification flow, the compute_provider kernel for env setup, image/volume resolution, and the two approval cards. Load once you've decided to dispatch to Modal.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 15,
+      "bytes": 209271,
+      "files": {
+        "remote-compute-modal/env-setup.md": {
+          "sha256": "831263c97389f1857028fa4026ddb3977b25e20be6fc8cc70d6df25988279d79",
+          "bytes": 16141
+        },
+        "remote-compute-modal/provider.json": {
+          "sha256": "3ec5afe85350f4cb82b4370cfa3bd9c1d08695d34335689ab5d6278dd74e54b0",
+          "bytes": 342
+        },
+        "remote-compute-modal/provider.py": {
+          "sha256": "58b6648edae6a3234a9adc8c719a2fc44fcadf9df9dde3bfb1aea30ac46023f8",
+          "bytes": 42360
+        },
+        "remote-compute-modal/requirements.lock": {
+          "sha256": "d6788dc4793abe0751ce08897934cc2401be6edf025c389c0edb193c50747dca",
+          "bytes": 72358
+        },
+        "remote-compute-modal/SKILL.md": {
+          "sha256": "7093817231f771334a53ff72a7f835635f357e0de2e33c5f8161102af4eb6c83",
+          "bytes": 54233
+        },
+        "remote-compute-modal/envs/chemistry_gpu.py": {
+          "sha256": "0b929572f2b4f6823486d8635156145da45ca310b0fd0e4b1f09397fe08ad548",
+          "bytes": 950
+        },
+        "remote-compute-modal/envs/esmfold2_gpu.py": {
+          "sha256": "b84e2babc270ab7fe8f4edde09bc4f60c67257397c4cd12389a48768edac5e31",
+          "bytes": 3644
+        },
+        "remote-compute-modal/envs/genomics_evo2_gpu.py": {
+          "sha256": "c3f3e4703998f061176abc2715b74060f939b84000b024fcfe6e35ec5f1c5055",
+          "bytes": 2095
+        },
+        "remote-compute-modal/envs/md_openmm_gpu.py": {
+          "sha256": "7dd15673229a614b5f58f4e3f6cbb324ad33bc3020568ee46e876082feed3126",
+          "bytes": 1436
+        },
+        "remote-compute-modal/envs/proteomics_boltz_gpu.py": {
+          "sha256": "fc3f36390514cc778f230bc05de910564ee026c3b710997a0ea4d7d59c1008b9",
+          "bytes": 1311
+        },
+        "remote-compute-modal/envs/proteomics_gpu.py": {
+          "sha256": "765076a3076fcccc9dce7669d8caf6a861f51cda40708065cafd5540e877edbe",
+          "bytes": 2450
+        },
+        "remote-compute-modal/envs/proteomics_jax_gpu.py": {
+          "sha256": "f862b09b9319fa17ffde4b588c209a2a1429a786d6599da023927fc60e4d7f0f",
+          "bytes": 1643
+        },
+        "remote-compute-modal/envs/proteomics_openfold_gpu.py": {
+          "sha256": "20562138429cbaa54853164adaf689abbcc37998e9299c3bfae71107c66039ff",
+          "bytes": 3049
+        },
+        "remote-compute-modal/envs/proteomics_rfd_diffdock_gpu.py": {
+          "sha256": "ff53e00ef83847d4793efca6e1986a58c64a876f1d54e26f2ac886c5fa3bbef5",
+          "bytes": 4103
+        },
+        "remote-compute-modal/envs/singlecell_gpu.py": {
+          "sha256": "ba5c49a11097a0248edde20b5f06d7b9d390e4cdd5f2bf29655d3454c6a542ac",
+          "bytes": 3156
+        }
+      }
+    },
+    "remote-compute-ssh": {
+      "name": "remote-compute-ssh",
+      "display_name": "remote-compute-ssh",
+      "description": "Submit→wait_for_notification→collect-outputs workflow for the user's SSH/SLURM hosts. Load once you've decided to dispatch remote.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 1,
+      "bytes": 27510,
+      "files": {
+        "remote-compute-ssh/SKILL.md": {
+          "sha256": "6b0a1bbb5543bb001e7dac65b5d47159cca278364a6625aef26deda555a624f3",
+          "bytes": 27510
+        }
+      }
+    },
+    "scgpt": {
+      "name": "scgpt",
+      "display_name": "scGPT",
+      "description": "Embed and annotate single-cell expression data with scGPT, a foundation model for single-cell biology. Use this skill when: (1) Producing cell embeddings from an AnnData for clustering/integration, (2) Zero-shot or fine-tuned cell-type annotation, (3) Gene-level representation for perturbation/GRN tasks.\nFor probabilistic single-cell models (scVI etc.), use the scvi-tools library.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "scGPT",
+          "license": null
+        }
+      ],
+      "file_count": 1,
+      "bytes": 5454,
+      "files": {
+        "scgpt/SKILL.md": {
+          "sha256": "cfc7161b3dccb7fe2ac7d46642b649a209c4eaddf9512f4faae27d36eb29bc97",
+          "bytes": 5454
+        }
+      }
+    },
+    "scvi-tools": {
+      "name": "scvi-tools",
+      "display_name": "scvi-tools",
+      "description": "Probabilistic single-cell RNA-seq with scvi-tools — scVI for a batch-corrected latent space, scANVI for semi-supervised label transfer, and Bayesian differential expression. Reach for this skill to integrate scRNA-seq batches, embed cells for clustering, transfer annotations from a reference onto a query, or score differentially expressed genes per cluster. For spatial deconvolution / mapping use the cell2location, DestVI, or Tangram methods instead.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": [
+        "gpu"
+      ],
+      "third_party": [],
+      "file_count": 2,
+      "bytes": 13252,
+      "files": {
+        "scvi-tools/kernel.py": {
+          "sha256": "4abd8a39ac92ef75222bc5b57f80d7bd0f00b6899d58863c2311ef0eadfcb6c4",
+          "bytes": 1982
+        },
+        "scvi-tools/SKILL.md": {
+          "sha256": "34866479168c8ef7f8e48c2a8e62b35263079af3b749ac35d96ed9748bcfa917",
+          "bytes": 11270
+        }
+      }
+    },
+    "self-awareness": {
+      "name": "self-awareness",
+      "display_name": "self-awareness",
+      "description": "Claude Science's own session database schema and SDK surface for introspection via host.query(). Load this when you need to query your own conversation history, token usage, cost accounting, execution log, or artifact metadata beyond what host.frames()/host.artifacts() provide — e.g. \"how many tokens has this session used\", \"what was my last tool call\", \"list every file I've written\", \"where are messages stored\", \"what tables can I query\", \"inspect frames.context_data\", or any time you're about to PRAGMA-probe the Claude Science metadata DB to discover its schema.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 1,
+      "bytes": 15296,
+      "files": {
+        "self-awareness/SKILL.md": {
+          "sha256": "7fab101590787d749db9088f2000f3e4ae2770f0ef789963728149afdc775e8f",
+          "bytes": 15296
+        }
+      }
+    },
+    "skill-creator": {
+      "name": "skill-creator",
+      "display_name": "skill-creator",
+      "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 17,
+      "bytes": 225380,
+      "files": {
+        "skill-creator/SKILL.md": {
+          "sha256": "53f2878a02789edacc03c8a9f6c9c89ab3666ce02bcd8d8643dd1548d7908d2e",
+          "bytes": 39473
+        },
+        "skill-creator/agents/analyzer.md": {
+          "sha256": "781df0c1344c181939f4e5762e84c9f6d15e97013d52f8e314cc36692e74d572",
+          "bytes": 10546
+        },
+        "skill-creator/agents/comparator.md": {
+          "sha256": "bc255d0010c341134513813bd761fa45a0d8542a8c7cf44b0ed40ce01542861f",
+          "bytes": 7370
+        },
+        "skill-creator/agents/grader.md": {
+          "sha256": "75defb397bc8937aa27c4721cbd5bb779b70fdf19f77110b1d1ba7f7f2432f0d",
+          "bytes": 9053
+        },
+        "skill-creator/assets/eval_review.html": {
+          "sha256": "35fc7d2368bf173ebd1639832693af89cae01a606b732c3cd8b8a06d218f0666",
+          "bytes": 8502
+        },
+        "skill-creator/eval-viewer/generate_review.py": {
+          "sha256": "25afe0a2c82ce70e636f9fb0fcf5c583a3dcd8bcc116739107214db801472134",
+          "bytes": 16110
+        },
+        "skill-creator/eval-viewer/viewer.html": {
+          "sha256": "ab8e1499518b1d3ebc894f7a5e6c8bd47dc8045d9e68d7894a21de3d124f864a",
+          "bytes": 52210
+        },
+        "skill-creator/references/schemas.md": {
+          "sha256": "0302d90cfe26f7a67218e66711071a23f28c47ac81e3ba13ce47ac451ca425a2",
+          "bytes": 12088
+        },
+        "skill-creator/scripts/aggregate_benchmark.py": {
+          "sha256": "f06948ec82c182e02483cb77cf822e3d578c36d0e6c2c6589e867615c685e7ba",
+          "bytes": 13486
+        },
+        "skill-creator/scripts/generate_report.py": {
+          "sha256": "d265b4e377688b6c549eebec5cdffc2e4a0fbefb02dbcdfaff7e8483c295825f",
+          "bytes": 12289
+        },
+        "skill-creator/scripts/improve_description.py": {
+          "sha256": "1b5ff8fc1a1e65f00e2ef3d7ec03a44266e8d1ccdcfa48ae8a6c88ce3f6cc0fc",
+          "bytes": 10447
+        },
+        "skill-creator/scripts/package_skill.py": {
+          "sha256": "b38415772edc77e1e6dc8f43b82dccb9ff58e93f5566139de98161feadd3e0f1",
+          "bytes": 3700
+        },
+        "skill-creator/scripts/quick_validate.py": {
+          "sha256": "6d917e48fa4a391d3331bb2910936be8ad61e39bb8e6864a0b7dc94c48cdced9",
+          "bytes": 3383
+        },
+        "skill-creator/scripts/run_eval.py": {
+          "sha256": "a2dd74fc29661dd09d56c039004be6903300749473361a6310d52b105e4926df",
+          "bytes": 12330
+        },
+        "skill-creator/scripts/run_loop.py": {
+          "sha256": "930046b8edc658be34b5a40425e24de7f718cf7d6c42c8da8b2c861f174740ce",
+          "bytes": 12793
+        },
+        "skill-creator/scripts/utils.py": {
+          "sha256": "d7b1df2efb98e160abb7cc19f3ca45aef7d7032d86ae80942164c70d304afe41",
+          "bytes": 1600
+        },
+        "skill-creator/scripts/__init__.py": {
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "bytes": 0
+        }
+      }
+    },
+    "solublempnn": {
+      "name": "solublempnn",
+      "display_name": "SolubleMPNN",
+      "description": "Inverse-fold a backbone with SolubleMPNN — ProteinMPNN retrained on a soluble-PDB subset (Dauparas et al. 2022) — for sequences biased toward cytosolic expression and reduced aggregation. Reach for this skill when designs from vanilla ProteinMPNN are aggregating or going to inclusion bodies, when redesigning a membrane-adjacent fold for soluble expression, or when an E. coli expression screen is the next step.",
+      "license": "Apache-2.0",
+      "category": "biomodels",
+      "requirements": null,
+      "third_party": [
+        {
+          "kind": "weights",
+          "name": "SolubleMPNN",
+          "license": "MIT"
+        }
+      ],
+      "file_count": 1,
+      "bytes": 4599,
+      "files": {
+        "solublempnn/SKILL.md": {
+          "sha256": "c2bf64a2e97f500c6fca1814b63bf0ed74aec7dd2212043c86e6003298114bbd",
+          "bytes": 4599
+        }
+      }
+    },
+    "using-model-endpoint": {
+      "name": "using-model-endpoint",
+      "display_name": "using-model-endpoint",
+      "description": "Call a registered model endpoint over its native HTTP API from the endpoint's scoped inference kernel (BASE_URL preloaded). Load once a task needs predictions from a registered model endpoint.",
+      "license": "Apache-2.0",
+      "category": null,
+      "requirements": null,
+      "third_party": [],
+      "file_count": 4,
+      "bytes": 7149,
+      "files": {
+        "using-model-endpoint/provider.json": {
+          "sha256": "306e4111dbcb642635e020d1caf94c75f24f18526401e85d43e6658c37a517d9",
+          "bytes": 187
+        },
+        "using-model-endpoint/provider.py": {
+          "sha256": "4508e5affd203575edd564398bf4c7bb12ddea75128488f2cdbb380ded8f2f1a",
+          "bytes": 3628
+        },
+        "using-model-endpoint/requirements.lock": {
+          "sha256": "497cea38365bd533f129a3c19d428f73eceb64ae069aaf6211ba9d44b9593a5b",
+          "bytes": 1580
+        },
+        "using-model-endpoint/SKILL.md": {
+          "sha256": "2ee613c4530f85e21db322b4e15d510a1800c228dee4c010a2849e55f852af00",
+          "bytes": 1754
+        }
+      }
+    }
+  },
+  "third_party_licenses": {
+    "sha256": "9a28d2f4e6e862a93a30ba74b40c56f169ceac83bc62f38a1c3951360f14eb90",
+    "bytes": 71330
+  }
+}
